@@ -43,4 +43,4 @@
 		"adCTATextPosition": ""
 	}
 });
-function hilangkan() {document.getElementById("sticky-advid").style = "top: -325px";} setTimeout("document.getElementById('sticky-advid').style = 'top: 5%'",4500)
+function hilangkan1() {document.getElementById("sticky-advid").style = "top: -325px";} setTimeout("document.getElementById('sticky-advid').style = 'top: 5%'",4500)
