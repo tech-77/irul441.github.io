@@ -218,7 +218,10 @@ const contactForm = document.getElementById("contact-form");
             pesanwhatsapp = "Hai%2C%20aku%20" + jawabkuis1 + ".%0A%0A" + "-%20" + kuisdua.innerHTML + "%0AJawabanku%3A%20" + jawabkuis2 + ".";
             tombol();
         }
-  showDiv();
+  
+      Swal.fire({backdrop:'', background:'',title:'Loading', text:'tunggu..',allowOutsideClick:false, showConfirmButton:false,timer:2200})
+   .then(() => {
+  showDiv();})
 </script>
 </body>
 </html>
