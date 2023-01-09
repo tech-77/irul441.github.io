@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"><meta charset='UTF-8'/><meta content='width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=5' name='viewport'/><meta content='IE=edge' http-equiv='X-UA-Compatible'/><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet"><script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
+    <style>
+body{background-color:#2A2A2A;background-repeat: no-repeat;background-size: 200% 200% 200%;transition:all .3s ease;font-family: 'Quicksand', sans-serif;padding: 25px}body::before{content:"\00A9 Rayya R";color:white;opacity:.1;font-size:5px;position:absolute;bottom:25px;left:calc(50vw - 13px);} a{text-decoration:none;} @keyframes anim {0% {opacity:.7;} 50% {opacity:.85;} 100% {opacity:1;}} .lovein{transition:all .1s ease;}.button:hover, .lovein:hover{opacity:.5;} #konten{z-index:3;position:relative;top:-50px;transition:all 1s ease;} #bodyblur{display:block;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.5);z-index:1;transition:all 1s ease;opacity:1;visibility:visible;-webkit-backdrop-filter:blur(5px); backdrop-filter:blur(5px);} :root { --warna-background: #327D2E; --warna-bg-chat: #f0f5fb; --warna-icon: #fff; --warna-text: #0F0F0F; --warna-text-alt: #989b9f; --lebar-chatbox: 320px; } svg{width: 22px;height: 22px;vertical-align: middle;fill: var(--warna-icon)} .chatMenu, .tombolChat .svg-2{display: none} .tombolChat{position: fixed;background-color: var(--warna-background);bottom: 20px;left: 20px;border-radius: 50px;z-index: 20;overflow: hidden;display:none;align-items: center;justify-content: center;width: 50px;height: 50px;-webkit-transition: all .2s ease-out;transition: all .2s ease-out} .tombolChat svg{margin: auto;fill: var(--warna-icon)} .chatBox{position: fixed;top: 70px;left: 20px;width: var(--lebar-chatbox);-webkit-transition: all .1s ease-out;transition: all .1s ease-out;z-index: 21;opacity: 0;visibility: hidden;line-height: normal} .chatContent{border-radius: 15px;background-color:rgba(0, 0, 0, .40);box-shadow: 0 5px 15px 0 rgba(0,0,0,.05);max-height:50vh;overflow: auto} .chatHead{position: relative;display: flex;align-items: center;padding: 15px 20px;background-color: var(--warna-background);overflow: hidden} .chatHead svg{width: 32px;height: 32px;flex-shrink: 0;fill: var(--warna-icon)} .chatHead img{border-radius:50%;width: 50px;height: 50px;flex-shrink: 0;} .chatHead .chatTitle{padding-left: 15px;font-size: 14px;color: var(--warna-icon)} .chatHead .chatTitle span{font-size: 11.5px;display: block;line-height: 1.58em} .chatText{display: flex;flex-wrap: wrap;margin: 25px 20px;font-size: 14px;color: var(--warna-text)} .chatText span{display: none;opacity:0;-webkit-transition: all .3s ease-out;transition: all .3s ease-out;margin-top:15px;margin-right: auto;padding: 10px 10px 10px 20px;background-color: var(--warna-bg-chat);border-radius: 3px 15px 15px} .chatText span:after{content: 'now';margin-left: 15px;font-size: 9px;color: var(--warna-text-alt)} .chatText .typing{font-size: 14px;margin: 15px 0 0 auto;padding: 10px 20px 10px 10px;border-radius: 15px 3px 15px 15px} .chatText .typing: after{display: none} .balasChat{display:none;align-items: center;margin-top: 15px;padding: 18px 20px;border-radius: 10px;background-color:rgba(0, 0, 0, .40);overflow: hidden;font-size: 12px;color: white;-webkit-transition: all .1s ease-out;transition: all .1s ease-out;}.balasChat:hover{transform: scale(.90);} .chatMenu:checked + .tombolChat{-webkit-transform: rotate(360deg);transform: rotate(360deg)} .chatMenu:checked + .tombolChat .svg-1{display: none} .chatMenu:checked + .tombolChat .svg-2{display: block} .chatMenu:checked ~ .chatBox{top: 10vh;opacity: 1;visibility: visible}
+</style>
+  </head>
+  <body>
+
+    <div id="konten">
+
+<input class='chatMenu hidden' id='offchatMenu' type='checkbox' />
+<div class='chatBox'>
+  <div id='data' class='chatContent'>
+    
+    <div class='chatText'>
+      <span id='text1'>Hai kamu~</span>
+      <span id='text2'>Aku mau bilang nih</span>
+      <span id='text3'>Kamu lucu banget deh</span>
+      <span id='text4'>Ehh &#128123; &#128123; &#128123;</span>
+      <span id='text5'>Tapi boong wlee</span>
+      <span id='text6'>Ga deh canda &#129396;</span>
+      <span id='text7'>Beneran lucu ko &#129395; &#129395; &#129395;</span>
+      <span id='text8'>Ohh iyaaaa</span>
+      <span id='text9'>Jangan pencet love ini!! <label class="lovein" onclick="selesai();">&#9829;</label></span>
+    </div>
+  </div>
+</div>
+
+<div id="bodyblur"></div>
+<audio id="myAudio">
+  <source src="https://halokamu.likeadream.repl.co/sound.mp3" type="audio/mpeg">
+</audio>
+<script type="text/javascript">
+var x = new Audio('sound.mp3');
+function play() {
+ x.play();
+}
+
+            const swals = Swal.mixin({
+                allowOutsideClick: false,
+            });
+            async function mulai(){              
+                    await swals.fire('Halo!');
+                    await swals.fire('Lihat ini sampai akhir ya &#129396;');                   
+                    setTimeout(check,1000);setTimeout(teks1,1000);
+                }
+            
+//Mulai
+mulai();
+function jscare(){document.body.style.backgroundImage = "url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqLt3LoMkpbNMyBTf-_M9b9k-pfCGcb67Xlg&usqp=CAU')";document.querySelector("body").style.animation = "anim 1s ease infinite";play();}
+</script>
+    <script>
+function teks1(){document.getElementById('text1').style.display = "inline-block";document.getElementById('text1').style.opacity = "1"; setTimeout(teks2,2000);} function teks2(){document.getElementById('text2').style.display = "inline-block";document.getElementById('text2').style.opacity = "1"; setTimeout(teks3,2000);scroll();selesai();} function teks3(){document.getElementById('text3').style.display = "inline-block";document.getElementById('text3').style.opacity = "1"; setTimeout(teks4,2000);scroll()} function teks4(){document.getElementById('text4').style.display = "inline-block";document.getElementById('text4').style.opacity = "1"; setTimeout(teks5,2000);scroll()} function teks5(){document.getElementById('text5').style.display = "inline-block";document.getElementById('text5').style.opacity = "1"; setTimeout(teks6,2000);scroll()} function teks6(){document.getElementById('text6').style.display = "inline-block";document.getElementById('text6').style.opacity = "1"; setTimeout(teks7,2000);scroll()} function teks7(){document.getElementById('text7').style.display = "inline-block";document.getElementById('text7').style.opacity = "1"; setTimeout(teks8,2000);scroll()} function teks8(){document.getElementById('text8').style.display = "inline-block";document.getElementById('text8').style.opacity = "1"; setTimeout(teks9,2000);scroll()} function teks9(){document.getElementById('text9').style.display = "inline-block";document.getElementById('text9').style.opacity = "1"; scroll()} function check() {document.getElementById('bodyblur').style.opacity = "0";document.getElementById('bodyblur').style.visibility = "hidden";document.getElementById("offchatMenu").checked = true;} function selesai() {document.getElementById('bodyblur').style.opacity = "1";document.getElementById('bodyblur').style.visibility = "visible";document.getElementById('konten').style.visibility = "hidden";document.getElementById('konten').style.opacity = "0";document.querySelector("body").style.animation = "anim 1s ease infinite";setTimeout(jscare,1000);} function scroll(){var objDiv = document.getElementById("data");objDiv.scrollTop = objDiv.scrollHeight;}
+</script>
+      
+  </body>
+</html>
