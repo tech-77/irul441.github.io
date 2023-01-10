@@ -1,0 +1,5 @@
+
+for FILE in ChatBox-UI-Like-Whatsapp/*
+ do
+         cp -R $FILE /storage/0006-0F4C/0.script/wa
+ done
